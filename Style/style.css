@@ -14,10 +14,16 @@ body {
 h1 {
     font-size: 60px;
     text-align: center;
+    padding-top: 20px;
 }
 
 h1, h2, h3, p, ul, li, b {
     color: white;
+}
+
+ul {
+  display: table;
+  margin: 0 auto;
 }
 
 hr {
@@ -54,7 +60,7 @@ hr {
 
 .Nav a::before {
     content: "◆ ";
-    color: #c4ff0e;
+    color: #0e97ff;
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -65,7 +71,24 @@ hr {
 
 .Nav a:hover {
     color: #0e97ff;
-    text-shadow: 0 0 15px #0e97ff, 0 0 30px #06e6d7;
+    text-shadow: 0 0 15px #0e97ff, 0 0 30px #0611e6;
+}
+
+.logo {
+    position: fixed;
+    top: 5px;
+    left: 30px;
+    width: 80px;
+    height: auto;
+    z-index: 100; /* sempre sopra tutto */
+    border-radius: 0;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .Main {
@@ -96,7 +119,7 @@ footer i {
     color: #bbb;
 }
 
-form {
+.Form {
     font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto;
@@ -106,7 +129,7 @@ form {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-form b {
+.Form b {
     color: #0e97ff;
     font-size: 20px;
 }
