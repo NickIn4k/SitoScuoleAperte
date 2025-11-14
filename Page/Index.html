@@ -1,0 +1,84 @@
+<!--
+OPEN DAY 22/11/2025
+Autori: Bassan Andrea, Creazzo Nicola, Refosco Enrico
+Classe 5BII - Informatica
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gioco: Cifrario di Cesare</title>
+        <link rel="icon"
+        href="https://scaling.spaggiari.eu/VIIT0005/favicon/75.png&amp;rs=%2FtccTw2MgxYfdxRYmYOB6AaWDwig7Mjl0zrQBslusFLrgln8v1dFB63p5qTp4dENr3DeAajXnV%2F15HyhNhRR%2FG8iNdqZaJxyUtaPePHkjhBWQioJKGUGZCYSU7n9vRa%2FmjC9hNCI%2BhCFdoBQkMOnT4UzIQUf8IQ%2B8Qm0waioy5M%3D">
+        <meta name="author" content="Bassan Andrea, Creazzo Nicola, Refosco Enrico">
+        <link rel="stylesheet" href="../Style/style.css">
+        <script src="../Script/library.js" defer></script>
+    </head>
+    <body>
+        <div class="lava-bg">
+            <div class="lava-blob"></div>
+            <div class="lava-blob"></div>
+            <div class="lava-blob"></div>
+            <div class="lava-blob"></div>
+            <div class="lava-blob"></div>
+        </div>
+        <!-- NAVBAR -->
+        <header class="Nav">
+            <a href="https://www.itisrossi.edu.it/" target="_blank">ITIS Rossi</a>
+            <a href="https://github.com/Eqryko" target="_blank">GitHub Profile</a>
+            <a href="https://it.wikipedia.org/wiki/Cifrario_di_Cesare" target="_blank">Cifrario di Cesare</a>
+        </header>
+
+        <div class="Main">
+            <!-- TITOLO PRINCIPALE -->
+            <h1>Il Cifrario di Cesare</h1>
+
+            <form>
+                <!-- DESCRIZIONE DEL CIFRARIO -->
+                <section>
+                    <p>
+                        Il <b>cifrario di Cesare</b> è un modo super semplice per nascondere un messaggio ✨
+                        <br>
+                        Come funziona? Ogni lettera dell'alfabeto viene “spinta” in avanti
+                        di un certo numero di posti 👉🔤
+                    </p>
+
+                    <p>Per esempio, se spostiamo di <b>3</b> posti:</p>
+
+                    <ul>
+                        <b><li>A → D</li>
+                        <li>B → E</li>
+                        <li>C → F</li></b>
+                    </ul>
+
+                    <p>
+                        È un po' come far fare un saltino alle lettere! 🐸✨
+                        <br><br>
+                        Per risolvere il messaggio segreto basta fare il contrario:
+                        riportare ogni lettera indietro del numero di posti usato. 🔙🔍
+                        <br><br>
+                        Ora che hai capito tutto... <b>pronto a decifrare la frase nascosta?</b> 😎🧠🔐
+                    </p>
+                </section>
+                <hr>
+
+                <!-- GIOCO -->
+                <section>
+                    <h2>Indovina la frase nascosta!</h2>
+
+                    <p><b>Frase crittata:</b> <span id="encrypted"></span></p>
+                    <p><b>Chiave:</b> <span id="key"></span></p>
+
+                    <p><b>Frase segreta:</b></p>
+                    <p id="progress"></p>
+
+                    <input type="text" id="guessInput" placeholder="Scrivi qui la frase originale">
+                    <input type="button" onclick="checkGuess()" value="Invio">
+
+                    <p id="message"></p>
+                </section>
+            <f>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,254 @@
+
+html{
+  max-width: 100%;
+}
+
+body {
+    background-color: #3d3d3d;
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+h1, h2, h3, p, ul, li, b {
+    color: white;
+}
+
+hr {
+    color: black;
+    background: black;
+    border: 0;
+    height: 3px;
+    margin: 0;
+}
+
+/*  NAV fisso sopra tutto */
+.Nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99; /* sopra il background animato */
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    gap: 100px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.Nav a {
+    color: #0e97ff;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 8px 30px;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.Nav a::before {
+    content: "◆ ";
+    color: #c4ff0e;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.Nav a:hover::before {
+    opacity: 1;
+}
+
+.Nav a:hover {
+    color: #0e97ff;
+    text-shadow: 0 0 15px #0e97ff, 0 0 30px #06e6d7;
+}
+
+.Main {
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: #fff;
+    font-size: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+footer p {
+    text-align: left;
+    margin: 0;
+}
+
+footer i {
+    color: #bbb;
+}
+
+form {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #000000e6;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form b {
+    color: #0e97ff;
+    font-size: 20px;
+}
+
+ul b{
+    color: #556cff;
+    font-size: 20px;
+}
+
+.Main, footer, form, h1, h2, p, ul, li {
+    position: relative;
+    z-index: 2;
+}
+
+/* Messaggio errore */
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* Messaggio corretto */
+.success {
+    color: green;
+    font-weight: bold;
+    animation: pop 0.4s ease-out;
+    font-size: 1.4rem;
+}
+
+/* Animazione finale */
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Animazione sul progresso finale */
+#progress.correct-animation {
+    animation: glow 1.2s ease-out forwards;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 0px green; }
+    100% { text-shadow: 0 0 25px lime; }
+}
+
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* --- SFONDO LAVA LAMP VERDE ANIMATO --- */
+.lava-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    background: #111;
+    pointer-events: none; /* impedisce che copra elementi interattivi */
+}
+
+/* Ogni “bolla” della lava */
+.lava-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.8;
+    animation: moveBlob 25s ease-in-out infinite;
+}
+
+/* Bolle con diverse dimensioni, colori e tempi */
+.lava-blob:nth-child(1) {
+    width: 500px;
+    height: 500px;
+    background: #0033ff;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.lava-blob:nth-child(2) {
+    width: 600px;
+    height: 600px;
+    background: #0077ff;
+    top: 50%;
+    left: 60%;
+    animation-delay: 5s;
+}
+
+.lava-blob:nth-child(3) {
+    width: 400px;
+    height: 400px;
+    background: #3399ff;
+    top: 70%;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+.lava-blob:nth-child(4) {
+    width: 550px;
+    height: 550px;
+    background: #2b00ff;
+    top: 20%;
+    left: 80%;
+    animation-delay: 15s;
+}
+
+.lava-blob:nth-child(5) {
+    width: 450px;
+    height: 450px;
+    background: #3ff2ff;
+    top: 80%;
+    left: 50%;
+    animation-delay: 20s;
+}
+
+/* Movimento fluido con leggeri zoom */
+@keyframes moveBlob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(100px, -50px) scale(1.2);
+    }
+    50% {
+        transform: translate(-150px, 100px) scale(0.9);
+    }
+    75% {
+        transform: translate(80px, 120px) scale(1.1);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
