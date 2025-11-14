@@ -275,3 +275,57 @@ ul b{
         transform: translate(0, 0) scale(1);
     }
 }
+
+/* --- TEXTBOX --- */
+#guessInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px 18px;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid #0e97ff;
+    background-color: #000000cc;
+    color: #0e97ff;
+    outline: none;
+    transition: 0.25s ease;
+    box-shadow: 0 0 10px #0e97ff55;
+}
+
+#guessInput::placeholder {
+    color: #5fb8ff88;
+}
+
+#guessInput:focus {
+    border-color: #4ecbff;
+    box-shadow: 0 0 15px #00c3ff, 0 0 30px #005eff;
+    transform: scale(1.03);
+}
+
+/* --- BUTTON --- */
+input[type="button"] {
+    padding: 12px 30px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: 2px solid #0e97ff;
+    background: linear-gradient(135deg, #003cff, #00c8ff);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s ease;
+    box-shadow: 0 0 12px #0e97ff88;
+}
+
+/* Effetto hover blu brillante */
+input[type="button"]:hover {
+    background: linear-gradient(135deg, #005eff, #00eaff);
+    box-shadow: 0 0 20px #00c8ff, 0 0 40px #0066ff;
+    transform: scale(1.07);
+}
+
+/* Alla pressione */
+input[type="button"]:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px #0088ff;
+}

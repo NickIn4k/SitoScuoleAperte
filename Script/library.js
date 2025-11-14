@@ -84,43 +84,49 @@ function revealOneLetter() {
 // -------------------------
 // 5. Verifica risposta
 // -------------------------
+let lastGuess = "";
 function checkGuess() {
     const input = document.getElementById("guessInput");
     const guess = input.value.toUpperCase().trim();
     const message = document.getElementById("message");
 
-    // ───────────────
     // Evita input vuoti
-    // ───────────────
     if (guess.length === 0) {
         message.textContent = "Inserisci una frase!";
         message.className = "error";
         return;
     }
 
-    // ───────────────
+    // ⛔ Evita SPAM del pulsante senza cambiare input
+    if (guess === lastGuess) {
+        message.textContent = "⚠️ Devi cambiare la frase prima di riprovare!";
+        message.className = "error";
+        input.classList.add("shake");
+        setTimeout(() => input.classList.remove("shake"), 300);
+        return;
+    }
+
+    // Aggiorna ultimo tentativo valido
+    lastGuess = guess;
+
     // Risposta corretta
-    // ───────────────
     if (guess === original) {
         message.textContent = "✨ Bravissimo! Hai decifrato il messaggio! ✨";
         message.className = "success";
 
-        // Mostra la frase intera!
         revealed = original.split("");  
         updateProgress();
 
-        // Animazione finale sulla frase
         const progress = document.getElementById("progress");
         progress.classList.add("correct-animation");
 
         return;
     }
 
-    // ───────────────
     // Risposta sbagliata
-    // ───────────────
     message.textContent = "❌ Non è corretto! Ti svelo una lettera...";
     message.className = "error";
+
     input.classList.add("shake");
     setTimeout(() => input.classList.remove("shake"), 300);
 
